@@ -1,3 +1,4 @@
+document.target_date = new Date(2013, 2, 25, 18)
 ms_to_days_hours_minutes_seconds = (time_in_ms) ->
   second = 1000
   minute = 60 * second
@@ -12,8 +13,11 @@ ms_to_days_hours_minutes_seconds = (time_in_ms) ->
   seconds = Math.floor (time_wo_minutes / second)
   return [days, hours, minutes, seconds].join(':')
 
+refresh_timer = () ->
+  difference = document.target_date - Date.now()
+  difference_string = ms_to_days_hours_minutes_seconds(difference)
+  $('.timer').replaceWith("<div class='timer'>" + difference_string + "</div>")
+
 $ ->
-  now = Date.now()
-  target = new Date(2013, 2, 25, 18)
-  difference = target - now
-  console.log ms_to_days_hours_minutes_seconds(difference)
+  refresh_timer()
+  setInterval(refresh_timer(), 999)
