@@ -12,12 +12,12 @@
     day = 24 * hour;
     days = Math.floor(time_in_ms / day);
     time_wo_days = time_in_ms - days * day;
-    hours = Math.floor(time_wo_days / hour);
+    hours = '0' + Math.floor(time_wo_days / hour);
     time_wo_hours = time_wo_days - hours * hour;
-    minutes = Math.floor(time_wo_hours / minute);
+    minutes = '0' + Math.floor(time_wo_hours / minute);
     time_wo_minutes = time_wo_hours - minutes * minute;
-    seconds = Math.floor(time_wo_minutes / second);
-    return [days, hours, minutes, seconds].join(':');
+    seconds = '0' + Math.floor(time_wo_minutes / second);
+    return [days, hours.substr(-2), minutes.substr(-2), seconds.substr(-2)].join(':');
   };
 
   refresh_timer = function() {
@@ -29,7 +29,9 @@
 
   $(function() {
     refresh_timer();
-    return setInterval(refresh_timer(), 999);
+    return setInterval(function() {
+      return refresh_timer();
+    }, 1000);
   });
 
 }).call(this);

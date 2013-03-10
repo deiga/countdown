@@ -6,12 +6,12 @@ ms_to_days_hours_minutes_seconds = (time_in_ms) ->
   day = 24 * hour
   days = Math.floor( time_in_ms / day )
   time_wo_days = time_in_ms - days * day
-  hours = Math.floor ( time_wo_days / hour )
+  hours = '0' + Math.floor ( time_wo_days / hour )
   time_wo_hours = time_wo_days - hours * hour
-  minutes = Math.floor ( time_wo_hours / minute )
+  minutes = '0' + Math.floor ( time_wo_hours / minute )
   time_wo_minutes = time_wo_hours - minutes * minute
-  seconds = Math.floor (time_wo_minutes / second)
-  return [days, hours, minutes, seconds].join(':')
+  seconds = '0' + Math.floor (time_wo_minutes / second)
+  return [days, hours.substr(-2), minutes.substr(-2), seconds.substr(-2)].join(':')
 
 refresh_timer = () ->
   difference = document.target_date - Date.now()
@@ -20,4 +20,6 @@ refresh_timer = () ->
 
 $ ->
   refresh_timer()
-  setInterval(refresh_timer(), 999)
+  setInterval(() ->
+    refresh_timer()
+  , 1000)
