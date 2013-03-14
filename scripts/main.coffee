@@ -11,12 +11,20 @@ ms_to_days_hours_minutes_seconds = (time_in_ms) ->
   minutes = '0' + Math.floor ( time_wo_hours / minute )
   time_wo_minutes = time_wo_hours - minutes * minute
   seconds = '0' + Math.floor (time_wo_minutes / second)
-  return [days, hours.substr(-2), minutes.substr(-2), seconds.substr(-2)].join(':')
+  return { 'days': days, 'hours': hours.substr(-2), 'minutes' : minutes.substr(-2), 'seconds' : seconds.substr(-2)}
 
 refresh_timer = () ->
   difference = document.target_date - Date.now()
-  difference_string = ms_to_days_hours_minutes_seconds(difference)
-  $('.timer').replaceWith("<div class='timer'>" + difference_string + "</div>")
+  difference = ms_to_days_hours_minutes_seconds(difference)
+  timer = $('.timer')
+  if parseInt(timer.find('.days').text(), 10) != difference.days
+    timer.find('.days').text(difference.days)
+  if parseInt(timer.find('.hours').text(), 10) != difference.hours
+    timer.find('.hours').text(difference.hours)
+  if parseInt(timer.find('.minutes').text(), 10) != difference.minutes
+    timer.find('.minutes').text(difference.minutes)
+    .next().text(difference.minutes)
+  timer.find('.seconds').text(difference.seconds)
 
 $ ->
   refresh_timer()
