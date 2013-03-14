@@ -29,9 +29,7 @@
 
   $(function() {
     refresh_timer();
-    return setInterval(function() {
-      return refresh_timer();
-    }, 1000);
+    return setInterval(refresh_timer, 1000);
   });
 
 }).call(this);

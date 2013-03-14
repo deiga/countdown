@@ -20,6 +20,4 @@ refresh_timer = () ->
 
 $ ->
   refresh_timer()
-  setInterval(() ->
-    refresh_timer()
-  , 1000)
+  setInterval(refresh_timer, 1000)
