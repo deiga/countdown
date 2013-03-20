@@ -2,7 +2,7 @@
 (function() {
   var ms_to_days_hours_minutes_seconds, refresh_timer;
 
-  document.target_date = new Date(2013, 2, 25, 18);
+  document.target_date = new Date(2013, 2, 25, 18, 05);
 
   ms_to_days_hours_minutes_seconds = function(time_in_ms) {
     var day, days, hour, hours, minute, minutes, second, seconds, time_wo_days, time_wo_hours, time_wo_minutes;

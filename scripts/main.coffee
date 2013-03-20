@@ -1,4 +1,4 @@
-document.target_date = new Date(2013, 2, 25, 18)
+document.target_date = new Date(2013, 2, 25, 18, 05)
 ms_to_days_hours_minutes_seconds = (time_in_ms) ->
   second = 1000
   minute = 60 * second
