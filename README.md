@@ -7,6 +7,7 @@ TODO
 ----
 - Format date string for readability
 - Make simple styles for page
+- check out https://github.com/nnnick/Chart.js
 
 Nice to have
 ------------
