@@ -1,4 +1,14 @@
-document.target_date = new Date(2013, 2, 25, 18, 05)
+nonna_inc = new Date(2013, 2, 25, 18, 5)
+helsinki_inc = new Date(2013, 3, 23, 14)
+home_inc = new Date(2013, 5, 1)
+if Date.now() > nonna_inc
+    if Date.now() > helsinki_inc
+        document.target_date = home_inc
+    else
+        document.target_date = helsinki_inc
+else
+    document.target_date = nonna_inc
+
 ms_to_days_hours_minutes_seconds = (time_in_ms) ->
   second = 1000
   minute = 60 * second
