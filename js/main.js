@@ -6,7 +6,7 @@
 
   helsinki_inc = new Date(2013, 3, 23, 14);
 
-  home_inc = new Date(2013, 5, 1);
+  home_inc = new Date(2013, 4, 24, 23, 30);
 
   if (Date.now() > nonna_inc) {
     if (Date.now() > helsinki_inc) {
