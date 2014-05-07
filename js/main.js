@@ -10,15 +10,7 @@
 
   steeri_inc = new Date(2014, 5, 8, 16, 0);
 
-  if (Date.now() > nonna_inc) {
-    if (Date.now() > helsinki_inc) {
-      document.target_date = home_inc;
-    } else {
-      document.target_date = helsinki_inc;
-    }
-  } else {
-    document.target_date = steeri_inc;
-  }
+  document.target_date = steeri_inc;
 
   ms_to_days_hours_minutes_seconds = function(time_in_ms) {
     var day, days, hour, hours, minute, minutes, second, seconds, time_wo_days, time_wo_hours, time_wo_minutes;
