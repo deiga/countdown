@@ -7,6 +7,8 @@
   helsinki_inc = new Date(2013, 3, 23, 14);
 
   home_inc = new Date(2013, 4, 24, 23, 30);
+  
+  steeri_inc = new Date(2014, 5, 8, 16, 00);
 
   if (Date.now() > nonna_inc) {
     if (Date.now() > helsinki_inc) {
@@ -15,7 +17,7 @@
       document.target_date = helsinki_inc;
     }
   } else {
-    document.target_date = nonna_inc;
+    document.target_date = steeri_inc;
   }
 
   ms_to_days_hours_minutes_seconds = function(time_in_ms) {
