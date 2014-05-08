@@ -8,7 +8,7 @@
 
   home_inc = new Date(2013, 4, 24, 23, 30);
 
-  steeri_inc = new Date(2014, 5, 8, 16, 0);
+  steeri_inc = new Date(2014, 4, 22, 16, 0);
 
   document.target_date = steeri_inc;
 
